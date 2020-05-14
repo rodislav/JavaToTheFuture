@@ -14,6 +14,7 @@ public class TextBlocks {
                 + "}";
 
         // Text blocks in action
+        // we can inject language or reference in Intellij Idea
         jsonString
                 = """
                 {

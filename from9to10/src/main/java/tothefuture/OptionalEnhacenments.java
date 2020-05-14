@@ -12,7 +12,7 @@ public class OptionalEnhacenments {
         List<Integer> numbers2 = List.of(1, 3, 5); // this list will fail
 
 
-        // or Else Throw
+        // or Else Throw - get value or else throw java.util.NoSuchElementException exception
         Integer firstEven = numbers.stream()
                 .filter(i -> i % 2 == 0)
                 .findFirst()
@@ -24,13 +24,13 @@ public class OptionalEnhacenments {
         final Optional<String> stringEmpty = Optional.empty();
 
 
-        // if Present Or Else
+        // if Present Or Else - if present then execute first lamba, or else execute second lamba
         stringEmpty.ifPresentOrElse(
                 s -> System.out.println(s),
                 () -> System.out.println("oh no, the thing is emty"));
 
 
-        // or
+        // or - get the value -OR- execute the lamba which should provide an optional with value or empty
         final Optional<String> orString = stringEmpty.or(() -> Optional.of("this is a backup string"));
         System.out.println(orString.get());
 

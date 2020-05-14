@@ -10,7 +10,7 @@ public class PatternMatchingInstanceOf {
             System.out.println(s);
         }
 
-        // s is a alias-like variable based on casting obj to String
+        // [s] is a alias-like variable based on casting [obj] to [String]
         if (obj instanceof String s) {
             System.out.println(s);
         }

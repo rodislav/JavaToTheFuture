@@ -13,6 +13,7 @@ public class LocalVariableTypeInference {
         var numbers2 = List.of(1, 3, 5); // the var variable needs to get a value right away
         System.out.println(numbers2.getClass().getCanonicalName());
 
+        // This will fail, since type inference works for variables that are assigned value to
         // var numbers3;
         // numbers3 = List.of(1, 3, 5);
 

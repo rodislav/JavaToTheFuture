@@ -1,6 +1,7 @@
 package tothefuture;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,11 +13,13 @@ public class UnmodifiableCollectionMethods {
         list.add("1");
         list.add("2");
         list.add("3");
+        //This exist already in JDK
+        list = Collections.unmodifiableList(list);
 
 
         // List -> copy Of
         List<String> unmodifiable = List.copyOf(list);
-        unmodifiable.add("fail"); // this will fail
+        // unmodifiable.add("fail"); // this will fail
 
 
         // Collectors -> to Unmodifiable List
@@ -24,6 +27,6 @@ public class UnmodifiableCollectionMethods {
                 .filter(i -> i.equals("1"))
                 .collect(Collectors.toUnmodifiableList());
 
-        unmodifiable.add("fail"); // this will fail
+        // unmodifiable.add("fail"); // this will fail
     }
 }

@@ -5,6 +5,8 @@ public class SwitchExpressions {
     public static void main(String[] args) {
         var me = 4;
         var operation = "squareMe";
+
+        // notice that switch can return a value
         var result = switch (operation) {
             case "doubleMe" -> {
                 yield me * 2; // example with yield

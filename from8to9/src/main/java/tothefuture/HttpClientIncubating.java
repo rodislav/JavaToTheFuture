@@ -14,13 +14,18 @@ import java.net.URISyntaxException;
 public class HttpClientIncubating {
 
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
+
+        // HttpRequest request
         HttpRequest request = HttpRequest
                 .newBuilder()
                 .uri(new URI("http://postman-echo.com/get"))
                 .GET()
                 .build();
 
+        // HttpClient client
         final HttpClient client = HttpClient.newBuilder().build();
+
+        // HttpResponse<T> response --> Mind the generics, we can get answer in the required format
         final HttpResponse<String> response = client.send(request, HttpResponse.BodyHandler.asString());
 
         System.out.println(response.body());

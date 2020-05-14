@@ -5,6 +5,7 @@ import java.util.function.Function;
 
 import static java.lang.System.out;
 
+@SuppressWarnings("Convert2MethodRef")
 public class LambdaTypeInference {
 
     public static void main(String[] args) {
@@ -17,14 +18,18 @@ public class LambdaTypeInference {
         // compile error in Java 10
         // Function<String, String> append3 = (var string) -> string + " ";
 
-        List<EnterpriseGradeType<With, Generics>> types = List.of();
+        List<EnterpriseGradeType<With, Generics>> listOfItems = List.of();
 
-        types.forEach((EnterpriseGradeType<With, Generics> type) -> out.println(type));
+        // WITHOUT lambda type inference
+        listOfItems.forEach((EnterpriseGradeType<With, Generics> item) -> out.println(item));
 
-        types.forEach((var type) -> out.println(type));
+        // WITH lambda type inference
+        listOfItems.forEach((var item) -> out.println(item));
     }
 
     class With {}
+
     class Generics {}
-    class EnterpriseGradeType<T, G>{}
+
+    class EnterpriseGradeType<T, G> {}
 }
