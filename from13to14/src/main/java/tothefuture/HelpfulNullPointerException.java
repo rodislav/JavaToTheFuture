@@ -2,6 +2,7 @@ package tothefuture;
 
 public class HelpfulNullPointerException {
 
+    // run with flag -XX:+ShowCodeDetailsInExceptionMessages enabled
     public static void main(String[] args) {
         Address address = new Address(null);
         User u = new User(address);
